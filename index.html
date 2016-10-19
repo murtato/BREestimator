@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='EstimatorApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Estimator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="estimatorController.js"></script>
+</head>
+<body>
+  <h1>BRE Investments</h1>
+  <h2>About Our Service</h2>
+  <div>Selling some real estate? BRE Investments is here to help you.</div>
+  <div>Try out our (experimental) instant Real Estate Value Estimator to find out how much you can earn from the sale of your property.</div>
+    Start by entering the cost of your rent here:
+  <div ng-controller="estimatorController as estimatorCtrl">
+    {{(500 * 12 * .65 / .04)*1.1 | currency}}<br>
+  </div>
+</body>
+</html>
+

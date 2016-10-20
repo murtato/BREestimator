@@ -8,14 +8,23 @@
   <script src="estimatorController.js"></script>
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+    </div>
+  </nav>
   <h1>BRE Investments</h1>
   <h2>About Our Service</h2>
   <div>Selling some real estate? BRE Investments is here to help you.</div>
   <div>Try out our (experimental) instant Real Estate Value Estimator to find out how much you can earn from the sale of your property.</div>
     Start by entering the cost of your rent here:
+  <form action="demo_form.asp">
+    Monthly Payment: <input type="number" name="monthly"><br>
+    Phone: <input type="number" name="phone"><br>
+    Address: <input type="text" name="address"><br>
+    <input type="submit" value="Submit">
+  </form>
   <div ng-controller="estimatorController as estimatorCtrl">
-    {{(500 * 12 * .65 / .04)*1.1 | currency}}<br>
+    {{(monthly.payment * 12 * .65 / .04)*1.1 | currency}}<br>
   </div>
 </body>
 </html>
-
